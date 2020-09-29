@@ -3,6 +3,7 @@ package main
 import(
 	"fmt"
 	"sync"
+	"time"
 )
 
 func dataProducter(ch chan int, wg *sync.WaitGroup)  {
@@ -24,6 +25,7 @@ func dataReceiver(ch chan int, wg *sync.WaitGroup)  {
 				fmt.Println("channel is closed.")
 				break
 			}
+			time.Sleep(time.Second * 1)
 		}
 		wg.Done()
 	}()
@@ -38,8 +40,8 @@ func TestCloseChannel()  {
 	dataProducter(ch, &wg)
 	wg.Add(1)
 	dataReceiver(ch, &wg)
-	wg.Add(1)
-	dataReceiver(ch, &wg)
+	// wg.Add(1)
+	// dataReceiver(ch, &wg)
 	wg.Wait()
 }
 func main()  {

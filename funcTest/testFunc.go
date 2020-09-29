@@ -31,7 +31,7 @@ func TestFn(){
 
 
 //可变长参数
-func Sum(ops ...int) int  {
+func Sum(ops ...int) int {
 	ret := 0
 	for _, op := range ops{
 		ret += op
@@ -45,10 +45,10 @@ func TestVarParam(){
 
 
 //defer函数
-func Clear()  {
+func Clear() {
 	fmt.Println("Clear resources.")
 }
-func TestDefer()  {
+func TestDefer() {
 	defer Clear()
 	fmt.Println("start")
 	panic("err")	//即便是发生了panic不可修复的异常，defer函数仍然会执行

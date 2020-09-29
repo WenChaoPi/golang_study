@@ -14,7 +14,7 @@ func (p *Pet) SpeakTo(host string){
 	fmt.Println(" ", host)
 }
 
-//定义 Dog
+// 定义 Dog
 // type Dog struct{
 // 	p *Pet
 // }
@@ -84,6 +84,6 @@ func TestPolymorphism(){
 
 
 func main()  {
-	// TestDog()
-	TestPolymorphism()
+	TestDog()
+	// TestPolymorphism()
 }
